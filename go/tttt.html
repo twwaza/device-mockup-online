@@ -10,16 +10,7 @@
 <body id="body">
 	<div id="header">
 		<div id="name">Bezelless Gray</div><label id="Addbtn" for="imageLoader"><img src="../icons/add.svg" width="25px" alt="Add"></label>
-	</div><!DOCTYPE html>
-	<html lang="en">
-	<head>
-	    <meta charset="UTF-8">
-	    <title>Page title</title>
-	</head>
-	<body>
-	    <button id="download">Download Canvas</button> <canvas id="canvas"></canvas>
-	</body>
-	</html>
+	</div>
 	<input type="file" id="imageLoader" name="imageLoader"/>
 	<canvas id="imageCanvas"></canvas>
 	<center><div id="img_div"></div></center>
@@ -55,20 +46,13 @@
           };
           img.src = event.target.result;
         };
-       
-       
-       document.getElementById('download').addEventListener('click', function(e) {
-  let canvas.toDataURL("image/png");
-  console.log(canvasUrl);
-  const createEl = document.createElement('a');
-  createEl.href = canvasUrl;
-  createEl.download = "download-this-canvas";
-  createEl.click();
-  createEl.remove();
-});
         reader.readAsDataURL(e.target.files[0]);
       }
 	</script>
+		  <script  src="https://gist.githubusercontent.com/twwaza/87889016abea15f54441b7b2ecfa410b/raw/095f42001ca21b8c1c1c2dd9fbc800557de945cc/script.js"></script>
+		  
+		  <button id="download">Download Canvas</button>
+<canvas id="canvas"></canvas>
 </body>
 </html>
 
