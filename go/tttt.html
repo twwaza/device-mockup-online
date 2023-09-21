@@ -47,7 +47,7 @@
           img.src = event.target.result;
         };
         reader.readAsDataURL(e.target.files[0]);
-      }
+      
 
 		
 document.getElementById('download').addEventListener('click', function(e) {
@@ -64,10 +64,11 @@ document.getElementById('download').addEventListener('click', function(e) {
     createEl.click();
     createEl.remove();
 });
+	}
 
 	</script>
 		
-		  <button id="download">Download Canvas</button>
+		  <button id="download">Download Canvas1</button>
 <canvas id="canvas"></canvas>
 </body>
 </html>
