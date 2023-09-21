@@ -48,9 +48,25 @@
         };
         reader.readAsDataURL(e.target.files[0]);
       }
+
+		
+document.getElementById('download').addEventListener('click', function(e) {
+    // Convert our canvas to a data URL
+    let canvasUrl = canvas.toDataURL();
+    // Create an anchor, and set the href value to our data URL
+    const createEl = document.createElement('a');
+    createEl.href = canvasUrl;
+
+    // This is the name of our downloaded file
+    createEl.download = "download-this-canvas";
+
+    // Click the download button, causing a download, and then remove it
+    createEl.click();
+    createEl.remove();
+});
+
 	</script>
-		  <script  src="https://gist.githubusercontent.com/twwaza/87889016abea15f54441b7b2ecfa410b/raw/095f42001ca21b8c1c1c2dd9fbc800557de945cc/script.js"></script>
-		  
+		
 		  <button id="download">Download Canvas</button>
 <canvas id="canvas"></canvas>
 </body>
