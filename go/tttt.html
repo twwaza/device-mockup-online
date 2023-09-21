@@ -50,22 +50,6 @@
         };
         reader.readAsDataURL(e.target.files[0]);
       
-
-		
-document.getElementById('download').addEventListener('click', function(e) {
-    // Convert our canvas to a data URL
-    let canvasUrl = canvas.toDataURL();
-    // Create an anchor, and set the href value to our data URL
-    const createEl = document.createElement('a');
-    createEl.href = canvasUrl;
-
-    // This is the name of our downloaded file
-    createEl.download = "download-image";
-
-    // Click the download button, causing a download, and then remove it
-    createEl.click();
-    createEl.remove();
-});
 	}
 
 	</script>
@@ -73,6 +57,22 @@ document.getElementById('download').addEventListener('click', function(e) {
 	<center>	  
 	<button class="btn btn-primary" id="download">Download image</button>
 		<canvas id="canvas"></canvas></center>
+			<script>
+const c= document.getElementById('canvas');
+const download = document.getElementById('download');
+
+download.addEventListener('click', function(e) {
+console.log(c.toDataURL());
+var link = document.createElement('a');
+link.download = 'download.png';
+link.href = c.toDataURL();
+link.click();
+link.delete;
+});
+</script>
+
+<button id="download">Download</button>
+	
+		
 </body>
 </html>
-
