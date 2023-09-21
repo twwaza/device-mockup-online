@@ -34,7 +34,6 @@ document.getElementById('download').addEventListener('click', function(e) {
     // Click the download button, causing a download, and then remove it
     createEl.click();
     createEl.remove();
-});
 
 		
 		var imageLoader = document.getElementById("imageLoader");
@@ -63,7 +62,7 @@ document.getElementById('download').addEventListener('click', function(e) {
               fileToSave.src = base64;
             };
             wm.src =
-              "../devices/bezelless_wgray.png";
+              "https://device-mockup-online.netlify.app/devices/bezelless_wgray.png";
           };
           img.src = event.target.result;
         };
