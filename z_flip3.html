@@ -11,19 +11,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>DMO</title>
 </head>
-<body id="body">
-	
-<br>
-	   <center><div class="btn btn-primary">
-		<label id="Addbn" for="imageLoader"><br><img src="https://cdn-icons-png.flaticon.com/128/685/685686.png" width="25px" alt="Add"></label><div id="name">Upload image</div>
-</div>
+<body>
+    <p></p>
+<center>	
+	<label class="btn btn-primary" for="imageLoader"><br><img src="https://cdn-icons-png.flaticon.com/128/685/685686.png" width="38px" alt="Add"><div id="name">Upload image</div></label>	
 	<input type="file" id="imageLoader" name="imageLoader"/>
-	<canvas id="imageCanvas"></canvas>
+	<canvas id="imageCanvas" style="margin-top: 20px" href="#" onclick="showStuff('showBt', 'text1', this); return false;"></canvas>
 	<center><div id="img_div"></div></center>
 	<script type="text/javascript">
 		/* Know how you can contribute to the code: Simply go to the Github project's issue. */
 		var imageLoader = document.getElementById("imageLoader");
       	imageLoader.addEventListener("change", handleImage, false);
+      	
       	var canvas = document.getElementById("imageCanvas");
       	var ctx = canvas.getContext("2d");
       	function handleImage(e) {
@@ -71,14 +70,25 @@ document.getElementById('download').addEventListener('click', function(e) {
 	}
 
 	</script>
-		
-	<center>	  
-	    <br>
-	    <div class="invisible">
-	<button class="btn btn-outline-primary" id="download"><i class="fa fa-download"></i> Download image</button>
-	</div>
-	</center>
 	
+	<label id="imageCanvas">
+	<button class="btn btn-outline-primary" for="img_div" id="download"><i class="fa fa-download"></i> Download image</button>
+	</label>
 	</div>
+	
+	<script>
+function showStuff(id, text, btn) {
+document.getElementById(id).style.display = 'block';
+// hide the text
+document.getElementById(text).style.display = 'none';
+// hide the link
+btn.style.display = 'none';
+}
+</script>
+
+
+
+
+	</body>
 </html>
 
