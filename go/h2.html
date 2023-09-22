@@ -16,15 +16,14 @@
 <center>	
 	<label class="btn btn-primary" for="imageLoader"><br><img src="https://cdn-icons-png.flaticon.com/128/685/685686.png" width="38px" alt="Add"><div id="name">Upload image</div></label>	
 	<input type="file" id="imageLoader" name="imageLoader"/>
-	<canvas id="canvas"></canvas>
+	<canvas id="imageCanvas"></canvas>
 	<center><div id="img_div"></div></center>
 	<script type="text/javascript">
 		/* Know how you can contribute to the code: Simply go to the Github project's issue. */
 		var imageLoader = document.getElementById("imageLoader");
       	imageLoader.addEventListener("change", handleImage, false);
-      let canvas = document.getElementById('canvas');
-let ctx = canvas.getContext('2d');
-		
+      	var canvas = document.getElementById("imageCanvas");
+      	var ctx = canvas.getContext("2d");
       	function handleImage(e) {
         var reader = new FileReader();
         reader.onload = function(event) {
@@ -70,10 +69,10 @@ document.getElementById('download').addEventListener('click', function(e) {
 	}
 
 	</script>
-		<canvas id="canvas">
+
+
 	<button class="btn btn-outline-primary" id="download"><i class="fa fa-download"></i> Download image</button>
-		</canvas>
+	<canvas id="imageCanvas"></canvas>
 	</div>
 	</body>
 </html>
-
