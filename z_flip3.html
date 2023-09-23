@@ -1,10 +1,11 @@
+
 <!doctype html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 <link href="https://fonts.googleapis.com/css?family=Roboto|Noto+Sans+SC&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://device-mockup-online.netlify.app/style.css">
+<link rel="stylesheet" href="https://dmo.asia/style.css" integrity="sha256-TJTrfD6xO+0aZj/AfPGsFybv8fQqfmeVpjgw1Jg+8uQ=" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <!-- Add icon library -->
@@ -16,13 +17,12 @@
 <center>	
 	<label class="btn btn-primary" for="imageLoader"><br><img src="https://cdn-icons-png.flaticon.com/128/685/685686.png" width="38px" alt="Add"><div id="name">Upload image</div></label>	
 	<input type="file" id="imageLoader" name="imageLoader"/>
-	<canvas id="imageCanva" onclick="myFunction()"></canvas>
+	<canvas id="imageCanvas"></canvas>
 	<center><div id="img_div" onclick="showStuff('showBt', 'text1', this); return true;"></div></center>
 	<script type="text/javascript">
 		/* Know how you can contribute to the code: Simply go to the Github project's issue. */
 		var imageLoader = document.getElementById("imageLoader");
       	imageLoader.addEventListener("change", handleImage, false);
-      	
       	var canvas = document.getElementById("imageCanvas");
       	var ctx = canvas.getContext("2d");
       	function handleImage(e) {
@@ -68,37 +68,20 @@ document.getElementById('download').addEventListener('click', function(e) {
     createEl.remove();
 });
 	}
-
 	</script>
-	
-	
-		<div id="showStuff">
-			<button class="btn btn-outline-primary" for="img_div" id="download"><i class="fa fa-download"></i> Download image</button>
-	</p>
-	</div>
-	
-	<script>
-function showStuff(id, text, btn) {
-document.getElementById(id).style.display = 'block';
-// hide the text
-document.getElementById(text).style.display = 'none';
-// hide the link
-btn.style.display = 'none';
-}
-</script>
+	<br>
 
+	<p id="showBt" style="display: none;">
+	<button class="btn btn-outline-primary" for="img_div" id="download"><i class="fa fa-download"></i> Download image</button>
 
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+	<script type="text/javascript">
+  function showStuff(id) {
+    document.getElementById(id).style.display='block';
   }
-}
-</script>
-	</body>
-</html>
 
+  function hideStuff(id) {
+    document.getElementById(id).style.display='none';
+  }
+</script>
+</body>
+</html>
