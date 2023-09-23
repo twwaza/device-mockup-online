@@ -17,7 +17,7 @@
 	<label class="btn btn-primary" for="imageLoader"><br><img src="https://cdn-icons-png.flaticon.com/128/685/685686.png" width="38px" alt="Add"><div id="name">Upload image</div></label>	
 	<input type="file" id="imageLoader" name="imageLoader"/>
 	<canvas id="imageCanva" onclick="myFunction()"></canvas>
-	<center><div id="img_div" showStuff('showBt', 'text1', this); return true;"></div></center>
+	<center><div id="img_div" onclick="showStuff('showBt', 'text1', this); return true;"></div></center>
 	<script type="text/javascript">
 		/* Know how you can contribute to the code: Simply go to the Github project's issue. */
 		var imageLoader = document.getElementById("imageLoader");
@@ -72,7 +72,7 @@ document.getElementById('download').addEventListener('click', function(e) {
 	</script>
 	
 	
-		<div id="myDIV">
+		<div id="showStuff">
 			<button class="btn btn-outline-primary" for="img_div" id="download"><i class="fa fa-download"></i> Download image</button>
 	</p>
 	</div>
