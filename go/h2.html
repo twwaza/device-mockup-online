@@ -4,20 +4,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 <link href="https://fonts.googleapis.com/css?family=Roboto|Noto+Sans+SC&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css" integrity="sha256-TJTrfD6xO+0aZj/AfPGsFybv8fQqfmeVpjgw1Jg+8uQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://dmo.asia/style.css" integrity="sha256-TJTrfD6xO+0aZj/AfPGsFybv8fQqfmeVpjgw1Jg+8uQ=" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <title>DMO</title>
 </head>
 <body>
-    <p></p>
-<center>	
-	<label class="btn btn-primary" for="imageLoader"><br><img src="https://cdn-icons-png.flaticon.com/128/685/685686.png" width="38px" alt="Add"><div id="name">Upload image</div></label>	
-	<input type="file" id="imageLoader" name="imageLoader"/>
+    
+   
+
+    <center>
+	<label for="imageLoader">
+	    <iconify-icon icon="mdi:cloud-upload-outline"></iconify-icon alt="Add">
+	     <span id="span">Upload your image here</span>
+	<input type="file" id="imageLoader" name="imageLoader"></label>
+	
 	<canvas id="imageCanvas"></canvas>
-	<center><div id="img_div" onclick="showStuff('showBt', 'text1', this); return true;"></div></center>
+	<center><div id="img_div"></div></center>
 	<script type="text/javascript">
 		/* Know how you can contribute to the code: Simply go to the Github project's issue. */
 		var imageLoader = document.getElementById("imageLoader");
@@ -39,19 +45,24 @@
             wm.onload = function() {
               ctx.drawImage(this, 0, 0, 1840, 3600);
               var base64 = canvas.toDataURL("image/png");
+              
               var fileToSave = new Image();
               fileToSave.onload = function() {
                 document.getElementById("img_div").appendChild(this);
               };
               fileToSave.src = base64;
             };
+            
             wm.src =
-              "../devices/bezelless_wgray.png";
+              "https://dmo.asia/devices/bezelless_wgray.png";
           };
+        
+          var_dl('project');
+         
           img.src = event.target.result;
         };
         reader.readAsDataURL(e.target.files[0]);
-		
+	
 document.getElementById('download').addEventListener('click', function(e) {
     // Convert our canvas to a data URL
     let canvasUrl = canvas.toDataURL();
@@ -66,21 +77,134 @@ document.getElementById('download').addEventListener('click', function(e) {
     createEl.click();
     createEl.remove();
 });
+
+
+        
 	}
 	</script>
-	<br>
 
-	<p id="showBt" style="display: none;">
-	<button class="btn btn-outline-primary" for="img_div" id="download"><i class="fa fa-download"></i> Download image</button>
+	
+	
+	<div id="project" style="display:none"><p class="ex1">
+	    <button class="btn btn-outline-primary"  for="img_div" id="download"><i class="fa fa-download"></i> Download image</button>
+
+
+	<button1 onClick="resetBtn()" class="button btn-closs fa fa-times" id="resetBtn"></button1>
+
+</div>
+<style>
+p.ex1 {
+  margin-top: 14px;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background: linear-gradient(#f4f8fb 0%, #d2e4f8 100%);
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+}
+.btn-close {
+  background-color: transparent;
+  &:hover, &:focus {
+    background-color: var(--c-action-primary-accent);
+  }
+}
+​
+* {
+  margin: 0;
+  podding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  display: none;
+}
+
+label {
+  width: 280px;
+  height: 125px;
+  padding: 15px;
+
+  border: 2px dotted #E9A580FF;
+  border-radius: 5px;
+
+  color: #E9A580FF;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+label:hover {
+  background-color: #ede7f6;
+}
+
+iconify-icon {
+  font-size: 28px;
+}
+
+span {
+  max-width: 100%;
+
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+button {
+  appearance: none;
+  padding: 8px;
+
+  background-color: #58b368;
+  border: none;
+  border-radius: 5px;
+
+  color: #ede7f6;
+  font-family: sans-serif;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+button:hover {
+  color: #fff;
+}
+button1 {
+  appearance: none;
+  padding: 8px;
+
+  background-color: #FF4040;
+  border: none;
+  border-radius: 5px;
+
+  color: #ede7f6;
+  font-family: sans-serif;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+</style>
 
 	<script type="text/javascript">
-  function showStuff(id) {
+  function var_dl(id) {
     document.getElementById(id).style.display='block';
+    }
+    function resetBtn() {
+        history.go(0);
   }
-
-  function hideStuff(id) {
-    document.getElementById(id).style.display='none';
-  }
+  
 </script>
 </body>
 </html>
