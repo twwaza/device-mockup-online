@@ -4,7 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 <link href="https://fonts.googleapis.com/css?family=Roboto|Noto+Sans+SC&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://dmo.asia/style.css" integrity="sha256-TJTrfD6xO+0aZj/AfPGsFybv8fQqfmeVpjgw1Jg+8uQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="../style.css" integrity="sha256-TJTrfD6xO+0aZj/AfPGsFybv8fQqfmeVpjgw1Jg+8uQ=" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <!-- Add icon library -->
@@ -13,14 +13,12 @@
 <title>DMO</title>
 </head>
 <body>
-    
    
-
     <center>
 	<label for="imageLoader">
 	    <iconify-icon icon="mdi:cloud-upload-outline"></iconify-icon alt="Add">
 	     <span id="span">Upload your image here</span>
-	<input type="file" id="imageLoader" name="imageLoader"></label>
+	<input type="file" id="imageLoader" name="imageLoader" accept="image/*"></label>
 	
 	<canvas id="imageCanvas"></canvas>
 	<center><div id="img_div"></div></center>
@@ -54,7 +52,7 @@
             };
             
             wm.src =
-              "https://dmo.asia/devices/bezelless_wgray.png";
+              "../devices/bezelless_wgray.png";
           };
         
           var_dl('project');
@@ -101,6 +99,7 @@ body {
   height: 100vh;
   display: grid;
   place-content: center;
+  margin-top: 0px;
   background: linear-gradient(#f4f8fb 0%, #d2e4f8 100%);
   font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
