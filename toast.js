@@ -247,7 +247,7 @@ const ava = ({ icon = 'success', toast = false, progressBar = true, text = null,
         function danger() {
             ava({
                 icon: 'danger',
-                text: 'မရနိုင်သေးပါ',
+                text: 'not available yet',
                 btnText: 'Okay',
                 progressBar: true,
                 toast: false,
@@ -319,13 +319,3 @@ const ava = ({ icon = 'success', toast = false, progressBar = true, text = null,
                 timer: 4000
             });
         }
-
-ava({
-            icon: 'success',
-            text: 'Welcome <br> Thank you very much for visiting this website',
-            btnText: 'Lets Go',
-            progressBar: false,
-            
-
-        });
-       
