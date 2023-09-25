@@ -320,12 +320,12 @@ const ava = ({ icon = 'success', toast = false, progressBar = true, text = null,
             });
         }
 
-<!--ava({
+ava({
             icon: 'success',
             text: 'Welcome <br> Thank you very much for visiting this website',
             btnText: 'Lets Go',
             progressBar: false,
             
 
-        });-->
+        });
        
