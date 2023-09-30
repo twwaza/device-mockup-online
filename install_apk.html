@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+
+<div class="g1">
+<div class="paling-jobo">
+  <div class="bungkus-down">
+    <div class="embuh">
+      <div class="file-info">
+        DMO 1.1 Apk
+      </div>
+      <button onclick="generate()" id="btn"><i class="fa fa-cloud-download" aria-hidden="true"></i> Download</button>
+      <a id="download" href="https://firebasestorage.googleapis.com/v0/b/dmo-app-99.appspot.com/o/DMO%20V_1.1.apk?alt=media&token=702478e2-3862-46f7-933f-642cc4ba2245&_gl=1*3c2c4s*_ga*MjA2NTA4NjEzMi4xNjkyNzEwMzMy*_ga_CW55HF8NVT*MTY5NjA3MDg2OS4xMC4xLjE2OTYwNzA5NzAuMjIuMC4w" style="display:none"><i class="fa fa-cloud-download" aria-hidden="true"></i> Redownload</a>
+      </div>
+    <div class="file-deskripsi">
+      <span class="uploader"><i class="fa fa-user-circle" aria-hidden="true"></i> JORYYUI</span> <span class="file-size"> <i class="fa fa-file" aria-hidden="true"></i>
+        File Size : 4.17MB</span>
+    </div>
+  </div>
+<div class="catatan-sikil">
+    အလိုအလျောက်ဒေါင်းလုဒ်မလုပ်ပါက၊ ကျေးဇူးပြု၍ Redownload ကိုနှိပ်ပါ။  လင့်ခ်ပျက်သွားပါက ကျွန်ုပ်တို့ထံ ဆက်သွယ်ရန် စာမျက်နှာမှတဆင့် သတင်းပို့ပါ။
+  </div>
+</div>
+
+<style>
+div.g1 {
+  margin: 0px;
+  podding: 0px;
+  background-color: #;
+}
+body{background:#;font-size: 11px;}
+a{text-decoration:none}
+#btn{cursor:pointer;padding:10px 20px;border:none;border-radius:3px;background:#fff;color:#1589E3;float:right;text-transform:uppercase;font-weight:700}
+#btn:hover, a#download:hover{background:#BC4634;color:#fff;-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;  -ms-transition: all 0.5s ease-out;-o-transition: all 0.5s ease-out;transition: all 0.5s ease-out;}
+.paling-jobo{display:block;width:60%;margin: 20px auto;border-radius:4px;font-family:'Noto', sans-serif}
+.bungkus-down{background:#1589E3;color:#fff;padding:10px 20px;display:block;border-top-right-radius:3px;border-top-left-radius: 3px;}
+.file-info{color:#fff;display:inline-block;font-size:1.4em;line-height: 40px;text-align:left}
+.catatan-sikil{padding:10px 20px;background:#EAEBED;border-bottom-right-radius:3px;border-bottom-left-radius:3px;color:#555}
+#download{float:right}
+a#download{padding:10px 20px;border-radius:3px;background:#fff;color:#FE634A;float:right;text-transform:uppercase;font-weight:700;text-align:center}
+.embuh span{display:inline-block;line-height: 38px;float:right}
+.iklan-down{float:right;width:40%;padding-left:10px;margin:20px 0;text-align:right}
+.file-deskripsi{display:block}
+.file-deskripsi span{margin-right:3px}
+.iklan-ngisore, .iklan-duwure{display:block;width:100%;margin:0 auto}
+h2.entry-title{margin-top:10px}
+.post-labels, .post-timestamp{display:none}
+a.home-link{color:#555;font-size:20px;}
+a.home-link:hover{color:#222}
+@media screen and (max-width:600px){
+.paling-jobo{float:none;width:100%}
+.iklan-down{float:none;width:100%;text-align:center;padding:0}
+ }
+@media screen and (max-width:320px){
+/* CSS styles */
+.file-info{display:block;text-align:center}
+#btn, a#download{width:100%;margin-bottom:10px}
+.embuh span{float:none;width:100%;text-align:center}
+.file-deskripsi{text-align:center;
+  font-size: 10px;
+}
+}
+</style>
+  
+  <script>
+  function generate() {
+    var linkDL = document.getElementById("download"),
+        btn = document.getElementById("btn"),
+        direklink = document.getElementById("download").href,
+        waktu = 10;
+    var teks_waktu = document.createElement("span");
+    linkDL.parentNode.replaceChild(teks_waktu, linkDL);
+    var id;
+    id = setInterval(function () {
+        waktu--;
+        if (waktu < 0) {
+            teks_waktu.parentNode.replaceChild(linkDL, teks_waktu);
+            clearInterval(id);
+            window.location.replace(direklink);
+            linkDL.style.display = "inline";
+            
+        } else {
+            teks_waktu.innerHTML = "<i class='fa fa-clock-o' aria-hidden='true'/> " + "စက္ကန့် " + "" + waktu.toString() + " စောင့်ပါ...";
+            btn.style.display = "none";
+        }
+    }, 1000);
+}
+
+//<![CDATA[
+function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }
+loadCSS("//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");loadCSS("https://fonts.googleapis.com/css?family=NotoSansMyanmar:400,700");
+//]]>
+</script>
+</body>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Mooli&family=Noto+Sans+Myanmar:wght@300&family=Roboto:ital,wght@1,900&family=Shadows+Into+Light&display=swap');
+</style>
+
+</html>
