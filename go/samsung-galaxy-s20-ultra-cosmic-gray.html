@@ -1,18 +1,54 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-<link href="https://fonts.googleapis.com/css?family=Roboto|Noto+Sans+SC&display=swap" rel="stylesheet">
+  <title>Samsung Galaxy S20 Ultra Cosmic Gray | DMO</title>
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="../style.css">
-<title>Samsung Galaxy S20 Ultra Cosmic Gray | DMO</title>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
-<body id="body">
-	<div id="header">
-		<div id="name">Samsung Galaxy S20 Ultra Cosmic Gray</div><label id="Addbtn" for="imageLoader"><img src="../icons/add.svg" width="25px" alt="Add"></label>
-	</div>
-	<input type="file" id="imageLoader" name="imageLoader"/>
+<body>
+<!-- partial:index.partial.html -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<nav class="nav">
+ <a href="../install_apk" class="nav__link">
+    <i class="material-icons nav__icon">install_mobile</i>
+   
+    <span class="nav__text">Mobile App</span>
+  
+  </a>
+  <a href="#" class="nav__link nav__link--active">
+    <i class="material-icons nav__icon">home</i>
+    <span class="nav__t">Home</span>
+  </a>
+  
+ 
+
+  <a href="#" class="nav__link">
+    <i class="material-icons nav__icon">chat</i>
+    <span class="nav__text" onclick="danger()">Contact admin</span>
+  </a>
+  
+
+</nav>
+<!-- partial -->
+<div class="div__tak">
+
+<center>
+	<label for="imageLoader">
+	    <iconify-icon icon="mdi:cloud-upload-outline"></iconify-icon alt="Add">
+	     <span id="span">Upload your image here</span>
+	<input type="file" id="imageLoader" name="imageLoader" accept="image/*"></label>
+	
 	<canvas id="imageCanvas"></canvas>
 	<center><div id="img_div"></div></center>
 	<script type="text/javascript">
@@ -36,19 +72,536 @@
             wm.onload = function() {
               ctx.drawImage(this, 0, 0, 1840, 3600);
               var base64 = canvas.toDataURL("image/png");
+              
               var fileToSave = new Image();
               fileToSave.onload = function() {
                 document.getElementById("img_div").appendChild(this);
               };
               fileToSave.src = base64;
             };
+            
             wm.src =
               "../devices/samsung-galaxy-s20-ultra-cosmic-gray.png";
           };
+        
+          var_dl('project');
+         
           img.src = event.target.result;
         };
         reader.readAsDataURL(e.target.files[0]);
-      }
+	
+document.getElementById('download').addEventListener('click', function(e) {
+    // Convert our canvas to a data URL
+    let canvasUrl = canvas.toDataURL();
+    // Create an anchor, and set the href value to our data URL
+    const createEl = document.createElement('a');
+    createEl.href = canvasUrl;
+
+    // This is the name of our downloaded file
+    createEl.download = "download.png";
+
+    // Click the download button, causing a download, and then remove it
+    createEl.click();
+    createEl.remove();
+});
+
+
+        
+	}
 	</script>
+
+	
+	
+	<div id="project" style="display:none"><p class="ex1">
+	    <button class="btn btn-outline-primary"  for="img_div" id="download"><i class="fa fa-download"></i> Download image</button>
+
+
+	<button1 onClick="resetBtn()" class="button btn-closs fa fa-times" id="resetBtn"></button1>
+
+</div>
+<style>
+p.ex1 {
+  margin-top: 14px;
+}
+
+.btn-close {
+  background-color: transparent;
+  &:hover, &:focus {
+    background-color: var(--c-action-primary-accent);
+  }
+}
+​
+* {
+  margin: 0;
+  podding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  display: none;
+}
+
+label {
+  width: 280px;
+  height: 125px;
+  padding: 15px;
+
+  border: 2px dotted #0D6EFD;
+  border-radius: 5px;
+  color: #0D6EFD;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+label:hover {
+  background-color: #ede7f6;
+}
+
+iconify-icon {
+  font-size: 28px;
+}
+
+
+button {
+  appearance: none;
+  padding: 8px;
+
+  background-color: #58b368;
+  border: none;
+  border-radius: 5px;
+
+  color: #ede7f6;
+  font-family: sans-serif;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+button:hover {
+  color: #fff;
+}
+button1 {
+  appearance: none;
+  padding: 8px;
+
+  background-color: #FF4040;
+  border: none;
+  border-radius: 5px;
+
+  color: #ede7f6;
+  font-family: sans-serif;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+</style>
+
+	<script type="text/javascript">
+  function var_dl(id) {
+    document.getElementById(id).style.display='block';
+    }
+    function resetBtn() {
+        history.go(0);
+  }
+  
+</script>
+    
+
+</div>
+
+  <style>
+      body {
+    margin: 0 0 55px 0;
+}
+     .div__tak {
+    margin: 10px;
+}
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+    border-radius: 0px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    display: flex;
+    overflow-x: auto;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 55px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #444444;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.nav__link:hover {
+    background-color: #00000000;
+    border-radius: 15px;
+    color: #58b368;
+}
+
+.nav__link--active {
+    color: #0D6EFD;
+}
+
+.nav__icon {
+    font-size: 18px;
+}
+
+.nav__t {
+   border-radius: 5px;
+   }
+  </style>
+  
+  
+
+
+<!-- 
+ how does it work ?
+     Add the CSS and JavaScript codes
+      to your document then 
+      call ava function like this =>
+      ava({
+        icon: string 'success' | 'danger' | 'info' | 'none' (defult is success),
+        text: string (alert text),
+        toast: bol true | false (defult is false) ,
+        progressBar: bol true | false (defult is true),
+        timer: int (defult is 4000),
+        btnText: string (Alert btn text Not Work For toast alerts),
+        direction: string 'rtl' | 'ltr' (defult is rtl only for toast),
+        position: string 'top-right' | 'top-left' | 'bottom-left' | 'bottom-right' (defult is top-right Only work for Toast alerts),
+      })
+
+      good luck =)
+ -->
+
+       
+    <style>
+        * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  direction: ltr;
+}
+
+body {
+  background-color: #ffffff;
+  color: black;
+}
+
+.ava-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ava-modal > * {
+  box-sizing: border-box;
+}
+
+.ava-alert {
+  background-color: white;
+  width: 80%;
+  text-align: right;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri;
+  font-weight: 900;
+  animation: 25s 1 ava_alert_animation;
+  -webkit-animation: 0.5s 1 ava_alert_animation;
+}
+
+@media (min-width: 650px) {
+  .ava-alert {
+    width: 300px;
+  }
+}
+
+@keyframes ava_alert_animation {
+  from {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.ava-alert .ava-progress-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.04);
+  animation-name: progressBarAnimation;
+  -webkit-animation-name: progressBarAnimation;
+}
+
+.ava-alert .ava-text-con {
+  position: relative;
+}
+
+@keyframes progressBarAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.ava-alert__icon {
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: inset 0px -5px 7px rgba(0, 0, 0, 0.3);
+}
+
+.ava-alert__text {
+  padding: 15px;
+  line-height: 1.5em;
+  color: #8a8a8a;
+  font-size: 13px;
+}
+
+.ava-alert__btn {
+  width: 70px;
+  padding: 7px 0px;
+  display: block;
+  margin: auto;
+  margin-bottom: 13px;
+  border-radius: 0;
+  border: 0;
+  background-color: #dfdfdf;
+  color: #b1b1b1;
+  cursor: pointer;
+  position: relative;
+}
+
+.ava-toast {
+  position: fixed;
+  box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+
+.ava-toast svg {
+  width: 30px;
+  height: 30px;
+}
+
+.ava-toast .ava-alert__icon {
+  padding: 0 10px;
+  box-shadow: none;
+}
+
+.ava-toast .ava-text-con {
+  width: 100%;
+}
+
+.ava-toast .ava-alert__btn {
+  margin: 0;
+}
+
+.ava-toast .ava-alert__text {
+  padding: 5px;
+  width: 100%;
+}
+
+.svg-box {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+}
+
+.ava-text-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.green-stroke {
+  stroke: #ffffff;
+}
+
+.red-stroke {
+  stroke: #ffffff;
+}
+
+.yellow-stroke {
+  stroke: #ffffff;
+}
+
+.circular circle.path {
+  stroke-dasharray: 330;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  opacity: 0.4;
+  animation: 0.7s draw-circle ease-out;
+}
+
+/*------- Checkmark ---------*/
+.checkmark {
+  stroke-width: 6.25;
+  stroke-linecap: round;
+  position: absolute;
+  top: 56px;
+  left: 49px;
+  width: 52px;
+  height: 40px;
+}
+
+.checkmark path {
+  animation: 1s draw-check ease-out;
+}
+
+@keyframes draw-circle {
+  0% {
+    stroke-dasharray: 0, 330;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  80% {
+    stroke-dasharray: 330, 330;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes draw-check {
+  0% {
+    stroke-dasharray: 49, 80;
+    stroke-dashoffset: 48;
+    opacity: 0;
+  }
+  50% {
+    stroke-dasharray: 49, 80;
+    stroke-dashoffset: 48;
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 130, 80;
+    stroke-dashoffset: 48;
+  }
+}
+
+/*---------- Cross ----------*/
+.cross {
+  stroke-width: 6.25;
+  stroke-linecap: round;
+  position: absolute;
+  top: 54px;
+  left: 54px;
+  width: 40px;
+  height: 40px;
+}
+
+.cross .first-line {
+  animation: 0.7s draw-first-line ease-out;
+}
+
+.cross .second-line {
+  animation: 0.7s draw-second-line ease-out;
+}
+
+@keyframes draw-first-line {
+  0% {
+    stroke-dasharray: 0, 56;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 0, 56;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 56, 330;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-second-line {
+  0% {
+    stroke-dasharray: 0, 55;
+    stroke-dashoffset: 1;
+  }
+  50% {
+    stroke-dasharray: 0, 55;
+    stroke-dashoffset: 1;
+  }
+  100% {
+    stroke-dasharray: 55, 0;
+    stroke-dashoffset: 70;
+  }
+}
+
+.alert-sign {
+  stroke-width: 6.25;
+  stroke-linecap: round;
+  position: absolute;
+  top: 40px;
+  left: 68px;
+  width: 15px;
+  height: 70px;
+  animation: 0.5s alert-sign-bounce cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.alert-sign .dot {
+  stroke: none;
+  fill: #ffffff;
+}
+
+@keyframes alert-sign-bounce {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+    </style>
+    
+    <script src="../script.js" integrity="sha384-Yot5zzNH4lb2lEPQJEl6f6LAYSW4E0bTzgMmFA4Pc2NTP5FfIg4kmVuCuaGNrFmp" crossorigin="anonymous"></script>
+    
+    
 </body>
 </html>
